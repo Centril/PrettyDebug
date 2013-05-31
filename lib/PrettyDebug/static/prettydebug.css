@@ -1,0 +1,84 @@
+/**
+ * General
+ */
+* { position:relative; }
+
+pre.prettydebug { white-space:pre; }
+
+.prettydebug .key
+.prettydebug a, .prettydebug .pointer,
+.prettydebug .array, .prettydebug .object, .prettydebug .string,
+.prettydebug .int, .prettydebug .bool, .prettydebug .double, .prettydebug .null,
+.prettydebug .index_string, .prettydebug .index_int,
+.prettydebug .public, .prettydebug .protected, .prettydebug .private,
+.prettydebug .static, .prettydebug .constant { font-weight:bold; }
+
+.prettydebug { background-color:#111; margin:13px 10px; padding:15px; overflow:auto; }
+.prettydebug, .prettydebug * { color:#fff; font-family:Courier New !important; font-size:14px !important; }
+.prettydebug a { color:#b6e0ff; }
+.prettydebug a:hover, .prettydebug a:hover span { color:#ff0000; }
+.prettydebug .hide_initially { display:none; }
+
+/**
+ * Controller
+ */
+#prettydebug-toggle-control { z-index:999; position:fixed; right:10px; top:10px; background-color:#000; border:1px dashed #640; }
+#prettydebug-toggle-control > input
+{
+	border:3px solid #1e1e1e; background-color:#fff; color:#1111cc;
+	font-family:Arial; font-weight:bold; padding:2px 2px 2px 5px; margin-bottom:4px;
+}
+#prettydebug-toggle-control > .error { text-decoration:blink; display:none; }
+
+/**
+ * PrettyDebug\VariableDumper
+ */
+.prettydebug .label { display:inline-block; margin:0 5px 0px 0; }
+.prettydebug .label.block { display:block; }
+.prettydebug .label.block, .prettydebug .label.multiline { margin-bottom:5px; }
+.prettydebug .label > .label-content { padding:0 5px; letter-spacing:1px; font-variant:small-caps; font-weight: bold; background-color:#001f30; border:1px solid #000; }
+.prettydebug .attr, .prettydebug .abstract, #prettydebug-toggle-control > .error { color:#ff9999; }
+.prettydebug .attr > .value, .object > .value, .prettydebug .trace-info .type, .prettydebug .trace-info .lines, .double .decimal { color:#fff !important; }
+.prettydebug .index_string, .prettydebug .string, .prettydebug .extends,
+.prettydebug .doc-comment-directive .directive-name, #prettydebug-toggle-control > .error > em { color:#afff2f; }
+.prettydebug .closure, .prettydebug .doc-comment-directive .variable, .prettydebug .doc-comment-license { color:#ffa8fc; }
+.prettydebug .index_int, .prettydebug .int > .value, .prettydebug .double > .value, .prettydebug .bool > .false { color:#ff2222; }
+.prettydebug .object { color:#1fff28; }
+.prettydebug .string > .value, .prettydebug .public, .prettydebug .show_class_info, .prettydebug .trace-info .class,
+.prettydebug .doc-comment-block .text-line { color:#fff8af; }
+.prettydebug .final, .prettydebug .bool, .prettydebug .private { color:#e4bfff; }
+.prettydebug .PHP, .prettydebug .object, .prettydebug .array, .prettydebug a.nodec { text-decoration:none; }
+.prettydebug .protected, .prettydebug .int, .prettydebug .trace-info .function { color:#8fd7ff; }
+.prettydebug .static { color:#ff885f; }
+.prettydebug .constant, .prettydebug .PHP { color:#ffff22; }
+.prettydebug .array { color:#ff66cc; }
+.prettydebug .string > .value { font-weight:normal; }
+.prettydebug .double { color:#4fffca; }
+.prettydebug .bool > .true { color:#22ff22; }
+.prettydebug .paranthesis, .prettydebug .child { display:block; }
+
+/**
+ * PrettyDebug\DocComment
+ */
+.prettydebug .doc-comment-directive .directive-name, .prettydebug .doc-comment-directive.inline { font-weight:bold; }
+.prettydebug .doc-comment-directive .text-line { font-weight:normal; color:#ffffff; }
+.prettydebug .doc-comment-directive .type { margin:0 4px; font-style:italic; color:#93c5ff !important; }
+.prettydebug .doc-comment-author .name { color:#ffaaaa }
+.prettydebug .doc-comment-access * { font-weight:normal !important; }
+
+/**
+ * PrettyDebug\Debugger
+ */
+html, body { margin:0; background-color:#000; }
+
+.prettydebug-debugger .title { font-size:2.2em !important; color:#ffffaa; }
+.prettydebug-debugger .message { font-size:1.2em !important; }
+.prettydebug-debugger .key { margin-bottom:10px; color:#99ff22; font-size:1.3em !important; }
+.prettydebug-debugger .trace { border-top:1px dashed #fff; padding-top:15px; }
+.prettydebug-debugger .trace-row { display:table-row; }
+.prettydebug-debugger .trace-row > * { display:table-cell; }
+.prettydebug-debugger .trace-info { padding:0 0 10px 12px; }
+.prettydebug-debugger .trace-info .file { color:#ffaaaa; }
+.prettydebug-debugger .trace-call-info { border-left:3px solid #000; }
+.prettydebug-debugger .trace-call-info .prettydebug { padding:0px 3px; }
+.prettydebug-debugger .label.call-info + .string > .value { color:#fff; }
